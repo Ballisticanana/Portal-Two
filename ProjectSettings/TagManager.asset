@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - MainCameraRed
   - MainCameraBlue
+  - Portal 1
+  - Portal 2
   layers:
   - Default
   - TransparentFX
