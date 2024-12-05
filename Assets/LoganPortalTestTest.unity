@@ -948,13 +948,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRed: 1
   player1RedCamera: {fileID: 0}
+  player1RedTransform: {fileID: 0}
+  player1RedPosition: {x: 0, y: 0, z: 0}
+  player1RedRotation: {x: 0, y: 0, z: 0, w: 0}
   player2BlueCamera: {fileID: 0}
+  player2BlueTransform: {fileID: 0}
+  player2BluePosition: {x: 0, y: 0, z: 0}
+  player2BlueRotation: {x: 0, y: 0, z: 0, w: 0}
   player1RedPortalCamera: {fileID: 0}
+  player1RedPortalCameraTransform: {fileID: 0}
+  player1RedPortalCameraPosition: {x: 0, y: 0, z: 0}
+  player1RedPortalCameraRotation: {x: 0, y: 0, z: 0, w: 0}
   player2BluePortalCamera: {fileID: 0}
-  RedPortalPosition: {x: 0, y: 0, z: 0}
-  RedPortalRotation: {x: 0, y: 0, z: 0, w: 0}
-  BluePortalPosition: {x: 0, y: 0, z: 0}
-  BluePortalRotation: {x: 0, y: 0, z: 0, w: 0}
+  player2BluePortalCameraTransform: {fileID: 0}
+  player2BluePortalCameraPosition: {x: 0, y: 0, z: 0}
+  player2BluePortalCameraRotation: {x: 0, y: 0, z: 0, w: 0}
+  redPortalTransform: {fileID: 0}
+  redPortalPosition: {x: 0, y: 0, z: 0}
+  redPortalRotation: {x: 0, y: 0, z: 0, w: 0}
+  bluePortalTransform: {fileID: 0}
+  bluePortalPosition: {x: 0, y: 0, z: 0}
+  bluePortalRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &612321428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,13 +1901,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRed: 1
   player1RedCamera: {fileID: 0}
+  player1RedTransform: {fileID: 0}
+  player1RedPosition: {x: 0, y: 0, z: 0}
+  player1RedRotation: {x: 0, y: 0, z: 0, w: 0}
   player2BlueCamera: {fileID: 0}
+  player2BlueTransform: {fileID: 0}
+  player2BluePosition: {x: 0, y: 0, z: 0}
+  player2BlueRotation: {x: 0, y: 0, z: 0, w: 0}
   player1RedPortalCamera: {fileID: 0}
+  player1RedPortalCameraTransform: {fileID: 0}
+  player1RedPortalCameraPosition: {x: 0, y: 0, z: 0}
+  player1RedPortalCameraRotation: {x: 0, y: 0, z: 0, w: 0}
   player2BluePortalCamera: {fileID: 0}
-  RedPortalPosition: {x: 0, y: 0, z: 0}
-  RedPortalRotation: {x: 0, y: 0, z: 0, w: 0}
-  BluePortalPosition: {x: 0, y: 0, z: 0}
-  BluePortalRotation: {x: 0, y: 0, z: 0, w: 0}
+  player2BluePortalCameraTransform: {fileID: 0}
+  player2BluePortalCameraPosition: {x: 0, y: 0, z: 0}
+  player2BluePortalCameraRotation: {x: 0, y: 0, z: 0, w: 0}
+  redPortalTransform: {fileID: 0}
+  redPortalPosition: {x: 0, y: 0, z: 0}
+  redPortalRotation: {x: 0, y: 0, z: 0, w: 0}
+  bluePortalTransform: {fileID: 0}
+  bluePortalPosition: {x: 0, y: 0, z: 0}
+  bluePortalRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1949593599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.381635
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2806,11 +2834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.9243131
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2818,7 +2846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 224.87
       objectReference: {fileID: 0}
     - target: {fileID: 1766925780396713880, guid: 8c96fdbeef46463489ed026aa9d873ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2885,10 +2913,10 @@ SceneRoots:
   - {fileID: 1949593603}
   - {fileID: 241198646}
   - {fileID: 1964528108}
+  - {fileID: 1507988775}
+  - {fileID: 612321432}
   - {fileID: 421504508}
+  - {fileID: 1574279712}
+  - {fileID: 1065725877}
   - {fileID: 4051344676584896961}
   - {fileID: 6272671476818160585}
-  - {fileID: 1507988775}
-  - {fileID: 1574279712}
-  - {fileID: 612321432}
-  - {fileID: 1065725877}
