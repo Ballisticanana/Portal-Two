@@ -107,8 +107,11 @@ public class PortalScript : MonoBehaviour
 
         if (isRed)
         {
-            player1RedPortalCameraTransform.transform.position = bluePortalTransform.position + player1RedTransform.position - redPortalTransform.position;
-            player1RedPortalCameraTransform.transform.rotation = bluePortalRotation * player1RedRotation;
+            player1RedPortalCameraTransform.transform.position = bluePortalTransform.transform.position - bluePortalTransform.TransformDirection(player1RedTransform.position - redPortalTransform.position);
+            player1RedPortalCameraTransform.LookAt(bluePortalPosition);
+            //player1RedPortalCameraTransform.transform.position = (bluePortalTransform.position + player1RedTransform.position - redPortalTransform.position);
+            //player1RedPortalCameraTransform.transform = transform.LookAt(bluePortalPosition);
+            //Debug.Log(Quaternion.Inverse(redPortalRotation) * player1RedRotation);
             Vector3.Distance(player1RedTransform.position, redPortalTransform.position);
         }
         else
