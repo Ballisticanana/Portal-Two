@@ -109,34 +109,36 @@ public class PortalScript : MonoBehaviour
         player2BluePortalCameraRotation = player2BluePortalCameraTransform.rotation;
 
         //portal transforms needs updates
-        redPortalPosition = player1RedPortalCameraTransform.position;
-        redPortalRotation = player1RedPortalCameraTransform.rotation;
+        redPortalPosition = redPortalTransform.position;
+        redPortalRotation = redPortalTransform.rotation;
 
         bluePortalPosition = bluePortalTransform.position;
         bluePortalRotation = bluePortalTransform.rotation;
 
-        if (isRed)
+        if (isRed == true)
         {
             //portal high thing
-            player1RedPortalCameraNewPos = bluePortalTransform.transform.position - bluePortalTransform.TransformDirection(player1RedTransform.position - redPortalTransform.position);
-            var tempV = Vector3.Distance(bluePortalPosition, player1RedPortalCameraNewPos);
+            player1RedPortalCameraNewPos = bluePortalPosition - bluePortalTransform.TransformDirection(player1RedTransform.position - redPortalTransform.position);
             player1RedPortalCameraTransform.transform.position = new Vector3 (player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z);
-            player1RedPortalCameraTransform.transform.localPosition = new Vector3(player1RedPortalCameraTransform.transform.localPosition.x, player1RedPortalCameraTransform.transform.localPosition.y, player1RedPortalCameraTransform.transform.localPosition.z + tempV*2);
-            player1RedPortalCameraTransform.rotation = bluePortalRotation * player1RedRotation;
+            player1RedPortalCameraTransform.eulerAngles = player1RedTransform.eulerAngles + bluePortalTransform.eulerAngles + new Vector3(0,180,0);
 
+            //Debug.Log(player1RedTransform.position - redPortalTransform.position);
+            //Debug.Log(bluePortalTransform.TransformDirection(player1RedTransform.position - redPortalTransform.position));
+            //Debug.Log(new Vector3 (player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z));
 
-
-
-            //Quaternion redPortalCameraInvert = (bluePortalTransform.rotation * player1RedTransform.rotation);
-
-            //* Quaternion.AngleAxis(180, Vector3.up);
-            // * new Quaternion(testNumberX, testNumberY, testNumberZ, testNumberW)
-            //* new quaternion(0, -1, 0, 0);
-            //player1RedPortalCameraTransform.rotation = quatern
+            player2BluePortalCameraNewPos = bluePortalPosition - bluePortalTransform.TransformDirection(player2BlueTransform.position - redPortalTransform.position);
+            player2BluePortalCameraTransform.transform.position = new Vector3 (player2BluePortalCameraNewPos.x, player2BlueTransform.position.y, player2BluePortalCameraNewPos.z);
+            player2BluePortalCameraTransform.eulerAngles = player2BlueTransform.eulerAngles + bluePortalTransform.eulerAngles + new Vector3(0,180,0);
         }
-        else
+        else if (isRed == false)
         {
-            Debug.Log("test");
+            player1RedPortalCameraNewPos = redPortalPosition - redPortalTransform.TransformDirection(player1RedTransform.position - bluePortalTransform.position);
+            player1RedPortalCameraTransform.transform.position = new Vector3 (player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z);
+            player1RedPortalCameraTransform.eulerAngles = player1RedTransform.eulerAngles + redPortalTransform.eulerAngles + new Vector3(0, 180, 0);
+
+            //Debug.Log(player1RedTransform.position - bluePortalTransform.position);
+            //Debug.Log(redPortalTransform.TransformDirection(player1RedTransform.position - bluePortalTransform.position));
+            //Debug.Log(new Vector3(player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z));
         }
     }
 }
