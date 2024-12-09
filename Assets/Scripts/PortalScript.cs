@@ -121,7 +121,8 @@ public class PortalScript : MonoBehaviour
             player1RedPortalCameraNewPos = bluePortalPosition - bluePortalTransform.TransformDirection(player1RedTransform.position - redPortalTransform.position);
             player1RedPortalCameraTransform.transform.position = new Vector3 (player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z);
             player1RedPortalCameraTransform.eulerAngles = player1RedTransform.eulerAngles + bluePortalTransform.eulerAngles + new Vector3(0,180,0);
-
+            //portal hight + player hight = camera position y
+            
             //Debug.Log(player1RedTransform.position - redPortalTransform.position);
             //Debug.Log(bluePortalTransform.TransformDirection(player1RedTransform.position - redPortalTransform.position));
             //Debug.Log(new Vector3 (player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z));
@@ -129,6 +130,16 @@ public class PortalScript : MonoBehaviour
             player2BluePortalCameraNewPos = bluePortalPosition - bluePortalTransform.TransformDirection(player2BlueTransform.position - redPortalTransform.position);
             player2BluePortalCameraTransform.transform.position = new Vector3 (player2BluePortalCameraNewPos.x, player2BlueTransform.position.y, player2BluePortalCameraNewPos.z);
             player2BluePortalCameraTransform.eulerAngles = player2BlueTransform.eulerAngles + bluePortalTransform.eulerAngles + new Vector3(0,180,0);
+            
+            //portal.eular + player.eular should = correct roataion
+            //in theroy this should work for floor and celling portlas
+
+            //test this layout
+            /*
+            //player1RedPortalCameraNewPos = bluePortalPosition - bluePortalTransform.TransformDirection(player1RedPosition - redPortalPosition);
+            //player1RedPortalCameraPosition = new Vector3 (player1RedPortalCameraNewPos.x, player1RedPosition.y + bluePortalPosition.y, player1RedPortalCameraNewPos.z);
+            //player1RedPortalCameraTransform.eulerAngles = player1RedTransform.eulerAngles + bluePortalTransform.eulerAngles + new Vector3(0,180,0);
+            */
         }
         else if (isRed == false)
         {
