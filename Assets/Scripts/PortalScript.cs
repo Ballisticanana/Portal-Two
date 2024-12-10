@@ -143,9 +143,10 @@ public class PortalScript : MonoBehaviour
         }
         else if (isRed == false)
         {
-            player1RedPortalCameraNewPos = redPortalPosition - redPortalTransform.TransformDirection(player1RedTransform.position - bluePortalTransform.position);
+            player1RedPortalCameraNewPos =redPortalPosition - redPortalTransform.TransformDirection(player1RedTransform.position - bluePortalTransform.position);
             player1RedPortalCameraTransform.transform.position = new Vector3 (player1RedPortalCameraNewPos.x, player1RedTransform.position.y, player1RedPortalCameraNewPos.z);
             player1RedPortalCameraTransform.eulerAngles = player1RedTransform.eulerAngles + redPortalTransform.eulerAngles + new Vector3(0, 180, 0);
+            // + new Vector3(0, 180, 0)
 
             //Debug.Log(player1RedTransform.position - bluePortalTransform.position);
             //Debug.Log(redPortalTransform.TransformDirection(player1RedTransform.position - bluePortalTransform.position));
