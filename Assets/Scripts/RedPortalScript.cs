@@ -17,6 +17,7 @@ public class RedPortalScript : MonoBehaviour
     public Quaternion player2_Rotation;
 
     public string oooooooooooooooooooooooooooooooooooooooooooo;
+    
     //player portal cameras & transform
     //player 1
     public Camera player1_ViewFromBlueCamera_Camera;
@@ -33,6 +34,7 @@ public class RedPortalScript : MonoBehaviour
     public Vector3 player2_ViewFromBlueCamera_NewPos;
 
     public string ooooooooooooooooooooooooooooooooooooooooooooo;
+    
     //Portal transform
     //Red Portal
     public Transform redPortal_Transform;
