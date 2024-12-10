@@ -124,6 +124,10 @@ public class RedPortalScript : MonoBehaviour
         bluePortal_Rotation = bluePortal_Transform.transform.rotation;
         #endregion
         #region Manipulate Values
+        //NOT TESTED
+        //player1_ViewFromBlueCamera_Transform.position = bluePortal_Transform.localPosition + redPortal_Transform.position - player1_Position;
+        //player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + bluePortal_Transform.eulerAngles + new Vector3(0,180,0);
+        //Play with this tommorrow
         #endregion
     }
 }
