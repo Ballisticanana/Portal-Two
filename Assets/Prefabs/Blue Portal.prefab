@@ -568,6 +568,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad2be373f6c2684a8f4d4f645ca7eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1_Camera: {fileID: 0}
+  player1_Transform: {fileID: 0}
+  player1_Position: {x: 0, y: 0, z: 0}
+  player1_Rotation: {x: 0, y: 0, z: 0, w: 0}
+  player2_Camera: {fileID: 0}
+  player2_Transform: {fileID: 0}
+  player2_Position: {x: 0, y: 0, z: 0}
+  player2_Rotation: {x: 0, y: 0, z: 0, w: 0}
+  oooooooooooooooooooooooooooooooooooooooooooo: 
+  player1_ViewFromRedCamera_Camera: {fileID: 0}
+  player1_ViewFromRedCamera_Transform: {fileID: 0}
+  player1_ViewFromRedCamera_Position: {x: 0, y: 0, z: 0}
+  player1_ViewFromRedCamera_Rotation: {x: 0, y: 0, z: 0, w: 0}
+  player1_ViewFromRedCamera_NewPos: {x: 0, y: 0, z: 0}
+  player2_ViewFromRedCamera_Camera: {fileID: 0}
+  player2_ViewFromRedCamera_Transform: {fileID: 0}
+  player2_ViewFromRedCamera_Position: {x: 0, y: 0, z: 0}
+  player2_ViewFromRedCamera_Rotation: {x: 0, y: 0, z: 0, w: 0}
+  player2_ViewFromRedCamera_NewPos: {x: 0, y: 0, z: 0}
+  ooooooooooooooooooooooooooooooooooooooooooooo: 
+  redPortal_Transform: {fileID: 0}
+  redPortal_Position: {x: 0, y: 0, z: 0}
+  redPortal_Rotation: {x: 0, y: 0, z: 0, w: 0}
+  bluePortal_Transform: {fileID: 0}
+  bluePortal_Position: {x: 0, y: 0, z: 0}
+  bluePortal_Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4611126832865609211
 GameObject:
   m_ObjectHideFlags: 0

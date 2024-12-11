@@ -124,10 +124,20 @@ public class RedPortalScript : MonoBehaviour
         bluePortal_Rotation = bluePortal_Transform.transform.rotation;
         #endregion
         #region Manipulate Values
-        //NOT TESTED
-        //player1_ViewFromBlueCamera_Transform.position = bluePortal_Transform.localPosition + redPortal_Transform.position - player1_Position;
-        //player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + bluePortal_Transform.eulerAngles + new Vector3(0,180,0);
-        //Play with this tommorrow
+        player1_ViewFromBlueCamera_Transform.position = bluePortal_Transform.position;
+        Vector3 newRot = bluePortal_Transform.eulerAngles;
+        player1_ViewFromBlueCamera_Transform.eulerAngles = new Vector3(newRot.x, -newRot.y, newRot.z);
+        Vector3 newPos = redPortal_Transform.TransformDirection(player1_Position - redPortal_Position);
+        player1_ViewFromBlueCamera_Transform.localPosition -= new Vector3(newPos.x, newPos.y, newPos.z);
+        //player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + (bluePortal_Transform.eulerAngles - redPortal_Transform.eulerAngles) + new Vector3(0, 180, 0);
         #endregion
     }
 }
+//TransformDirection(bluePortal_Transform.position - redPortal_Transform.TransformDirection(redPortal_Transform.position - player1_Position));
+//NOT TESTED
+//player1_ViewFromBlueCamera_Transform.position = bluePortal_Transform.localPosition + redPortal_Transform.TransformDirection(redPortal_Transform.position - player1_Position);
+//Debug.Log(Vector2.Distance(new Vector2(player1_Position.x, player1_Position.z), new Vector2(redPortal_Position.x, redPortal_Position.z)));
+//Vector3 testVector = redPortal_Transform.TransformDirection(player1_Position - redPortal_Transform.localPosition).normalized;
+//player1_ViewFromBlueCamera_Transform.position = bluePortal_Position + testVector;
+//player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + redPortal_Transform.eulerAngles - bluePortal_Transform.eulerAngles + new Vector3(0,180,0);
+//Play with this tommorrow
