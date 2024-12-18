@@ -24,7 +24,7 @@ public class Turret : MonoBehaviour
     }
     IEnumerator Letmego(ThirdPersonController thirdPersonController)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         thirdPersonController.enabled = true;
     }
 }
