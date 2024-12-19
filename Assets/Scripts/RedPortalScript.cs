@@ -93,8 +93,8 @@ public class RedPortalScript : MonoBehaviour
         bluePortal_Position = bluePortal_Transform.transform.position;
         bluePortal_Rotation = bluePortal_Transform.transform.rotation;
 
-        redPortal_CameraParent_Transform = GameObject.Find("Red Portals Cameras").transform;
-        bluePortal_CameraParent_Transform = GameObject.Find("Red Portals Cameras").transform;
+        //redPortal_CameraParent_Transform = GameObject.Find("Red Portals Cameras").transform;
+        //bluePortal_CameraParent_Transform = GameObject.Find("Red Portals Cameras").transform;
 
         #endregion
     }
@@ -155,7 +155,7 @@ public class RedPortalScript : MonoBehaviour
             Debug.Log("0");
         }
         player1_ViewFromBlueCamera_Transform.position = new Vector3(player1_ViewFromBlueCamera_Transform.position.x, bluePortal_Transform.localPosition.y + (player1_Position.y - redPortal_Position.y) , player1_ViewFromBlueCamera_Transform.position.z);
-        player1_ViewFromBlueCamera_Camera.nearClipPlane = Vector3.Distance(player1_Position, redPortal_Position);
+        //player1_ViewFromBlueCamera_Camera.nearClipPlane = Vector3.Distance(player1_Position, redPortal_Position);
         #endregion
     }
 }
