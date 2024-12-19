@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -98,7 +99,7 @@ public class RedPortalScript : MonoBehaviour
         #endregion
     }
 
-    void Update()
+    void FixedUpdate()
     {
         #region Update Values
         //player cameras & transform
@@ -131,59 +132,30 @@ public class RedPortalScript : MonoBehaviour
         bluePortal_Rotation = bluePortal_Transform.transform.rotation;
         #endregion
         #region Manipulate Values
-        player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + (bluePortal_Transform.eulerAngles - redPortal_Transform.eulerAngles) + new Vector3(0, 180, 0);
-        if (Mathf.Abs(redPortal_Transform.eulerAngles.y % 360) == 90)
-        {
-            player1_ViewFromBlueCamera_Transform.localPosition = -redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
-            Debug.Log("0 - 90");
-        }
-        else if (Mathf.Abs(redPortal_Transform.eulerAngles.y % 360) == 180)
-        {
-            player1_ViewFromBlueCamera_Transform.localPosition = redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
-            Debug.Log("90 - 180");
-        }
-        else if (Mathf.Abs(redPortal_Transform.eulerAngles.y % 360) == 270)
-        {
-            player1_ViewFromBlueCamera_Transform.localPosition = -redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
-            Debug.Log("180 - 270");
-        }
-        else if (Mathf.Abs(redPortal_Transform.eulerAngles.y % 360) == 360)
-        {
-            player1_ViewFromBlueCamera_Transform.localPosition = redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
-            Debug.Log("270 - 0");
-        }
         
-
-
-
-
-
-        //Debug.Log(player1_Transform.eulerAngles + "+" + bluePortal_Transform.eulerAngles + "+" + redPortal_Transform.eulerAngles);
-
-        //player1_ViewFromBlueCamera_Transform
-
-
-
-        //bluePortal_Transform.localPosition + (redPortal_Transform.TransformDirection(redPortal_Position - player1_Position));
-
-
-
-
-        //player1_ViewFromBlueCamera_Transform.position = bluePortal_Transform.position;
-        //Vector3 newRot = bluePortal_Transform.eulerAngles;
-        //player1_ViewFromBlueCamera_Transform.eulerAngles = new Vector3(newRot.x, newRot.y, newRot.z);
-        //Vector3 newPos = redPortal_Transform.TransformDirection(player1_Position - redPortal_Position);
-        //player1_ViewFromBlueCamera_Transform.localPosition -= new Vector3(newPos.x, newPos.y, newPos.z);
-        /////////////player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + (bluePortal_Transform.eulerAngles - redPortal_Transform.eulerAngles) + new Vector3(0, 180, 0);
-
+        player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + (bluePortal_Transform.eulerAngles - redPortal_Transform.eulerAngles) + new Vector3(0, 180, 0);
+        if (Mathf.Abs(redPortal_Transform.eulerAngles.y) % 360 == 90)
+        {
+            player1_ViewFromBlueCamera_Transform.localPosition = redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
+            Debug.Log("90");
+        }
+        else if (Mathf.Abs(redPortal_Transform.eulerAngles.y) % 360 == 180)
+        {
+            player1_ViewFromBlueCamera_Transform.localPosition = -redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
+            Debug.Log("180");
+        }
+        else if (Mathf.Abs(redPortal_Transform.eulerAngles.y) % 360 == 270)
+        {
+            player1_ViewFromBlueCamera_Transform.localPosition = redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
+            Debug.Log("270");
+        }
+        else if (Mathf.Abs(redPortal_Transform.eulerAngles.y) % 360 == 0)
+        {
+            player1_ViewFromBlueCamera_Transform.localPosition = -redPortal_Transform.TransformDirection(redPortal_Position - player1_Position);
+            Debug.Log("0");
+        }
+        player1_ViewFromBlueCamera_Transform.position = new Vector3(player1_ViewFromBlueCamera_Transform.position.x, bluePortal_Transform.localPosition.y + (player1_Position.y - redPortal_Position.y) , player1_ViewFromBlueCamera_Transform.position.z);
+        player1_ViewFromBlueCamera_Camera.nearClipPlane = Vector3.Distance(player1_Position, redPortal_Position);
         #endregion
     }
 }
-//TransformDirection(bluePortal_Transform.position - redPortal_Transform.TransformDirection(redPortal_Transform.position - player1_Position));
-//NOT TESTED
-//player1_ViewFromBlueCamera_Transform.position = bluePortal_Transform.localPosition + redPortal_Transform.TransformDirection(redPortal_Transform.position - player1_Position);
-//Debug.Log(Vector2.Distance(new Vector2(player1_Position.x, player1_Position.z), new Vector2(redPortal_Position.x, redPortal_Position.z)));
-//Vector3 testVector = redPortal_Transform.TransformDirection(player1_Position - redPortal_Transform.localPosition).normalized;
-//player1_ViewFromBlueCamera_Transform.position = bluePortal_Position + testVector;
-//player1_ViewFromBlueCamera_Transform.eulerAngles = player1_Transform.eulerAngles + redPortal_Transform.eulerAngles - bluePortal_Transform.eulerAngles + new Vector3(0,180,0);
-//Play with this tommorrow
