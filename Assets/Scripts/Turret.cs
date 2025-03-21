@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player1Red" )
+        if (other.gameObject.name == "Player1Red"&& enabled)
         {
             Debug.Log("I SEEEEE YOUUUUUUU");
             other.GetComponent<ThirdPersonController>().enabled = false;

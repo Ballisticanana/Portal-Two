@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DisableTurret : MonoBehaviour
 {
+    public Turret Linkedturret;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,8 +20,9 @@ public class DisableTurret : MonoBehaviour
     {
         if (other.gameObject.name == "Player2Blue")
         {
-            other.GetComponent<Turret>().enabled = false;
-
+           Linkedturret.enabled = false;
+            Debug.Log("hi");
         }
     }
+
 }
